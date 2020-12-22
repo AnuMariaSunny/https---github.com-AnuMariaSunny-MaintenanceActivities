@@ -1,0 +1,47 @@
+<div class="content" role="main">
+    <button (click)="goToPage('add-edit-activity')">Add Activity</button>
+</div>
+
+
+
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th> ActivityId  </th>
+            <th>   ActivityName</th>
+            <th>  ActivityType </th>
+            <th>   ScheduledDate</th>
+            <th>    StreetName</th>
+            <th>  AlternativeStreet</th>
+            <th>  IsClosed</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    <tbody> 
+        <tr *ngFor="let dataitem of Activity">
+            <td>
+                {{dataitem.activityId}}</td>
+               <td> {{dataitem.activityName}}</td>
+               <td>{{dataitem.activityType}}</td> 
+                <td>{{dataitem.scheduledDate}}</td>
+               <td>{{dataitem.streetName}}</td> 
+                <td>{{dataitem.alternativeStreet}}</td>
+                <td>{{dataitem.isClosed}}</td>
+                <td>
+                    <button type="button" class="btn btn-light mr-1"
+                        (click)="goToPage('add-edit-activity')">Edit
+                        </button>
+                        <button type="button" class="btn btn-light mr-1"
+                        (click)="deleteClick(dataitem)">
+                            Delete
+                        </button>
+                </td>
+
+            
+        </tr>
+
+    </tbody>
+   
+</table>
